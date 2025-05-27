@@ -1,7 +1,15 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminAuthController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
+
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,7 +21,21 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
+Route::post('/register', [RegisterController::class, 'register']);
+Route::post('/login', [LoginController::class, 'login']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::prefix('admin')->group(function () {
+    Route::post('/login', [AdminAuthController::class, 'login']);
+
+    Route::middleware(['auth:sanctum', 'admin'])->group(function () {
+        Route::get('/', function () {
+            return response()->json(['message' => 'Bienvenue sur le dashboard admin']);
+        });
+    });
+});
+
