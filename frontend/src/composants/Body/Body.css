@@ -1,0 +1,67 @@
+.body{
+    background-color: var(--primary-color);
+    margin: 0;
+    padding: 0;
+    min-width: 100vh;
+}
+
+.body-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 100vh;
+    color: var(--dark-color);
+    margin-left:  100px;
+    padding: 50px 10px;
+}
+.body-container .details .title{
+    font-size:50px;
+    font-family: "Miniver", sans-serif;
+    color: var(--secondary-color);
+}
+.image{
+    display: flex;
+    justify-content: flex-end;
+}
+.body-container .details .description{
+    font-size: var(--font-size-m);
+    color: var(--dark-color);
+}
+.buttons{
+    display: flex;
+    gap: 2rem;
+    
+}
+.btn-voitures, .btn-contact{
+    border: 2px solid var(--secondary-color);
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    font-size: var(--font-size-s);
+    font-family: "Miniver", sans-serif;
+    color: var(--dark-color);
+    background-color: var(--primary-color);
+    transition: 0.3s;
+    cursor: pointer;
+}
+.btn-contact{
+    border: 2px solid var(--secondary-color);
+    padding: 1rem 1rem;
+    border-radius: 10px;
+    font-size: var(--font-size-s);
+    font-family: "Miniver", sans-serif;
+    color: var(--dark-color);
+    background-color: var(--primary-color);
+    transition: 0.3s;
+    cursor: pointer;
+}
+.btn-voitures:hover, .btn-contact:hover{
+    background-color: var(--secondary-color);
+    color: var(--primary-color)
+}
+.image .img{
+    width: 700px;
+    margin-right: 10px;
+    padding: 30px;
+    margin-top: -150px;
+    border: none;
+}

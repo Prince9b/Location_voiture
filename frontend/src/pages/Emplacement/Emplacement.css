@@ -1,0 +1,35 @@
+.emp-container{
+    justify-content: center;
+}
+.section1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    margin: 50px 0;
+    
+}
+.emp1{
+    padding: 40px 50px;
+    width: 600px;
+    height: 350px;
+}
+.section1 p{
+    text-decoration: none;
+    margin-right: 50px;
+}
+.section2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    margin: 50px 0;
+}
+.emp2{
+    padding: 40px 50px;
+    width: 600px;
+    height: 350px;
+}
+.section2 p{
+    text-decoration: none;
+    margin-right: 50px;}

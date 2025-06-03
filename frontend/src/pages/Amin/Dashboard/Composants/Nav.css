@@ -1,0 +1,70 @@
+.nav1 {
+      background-color: gainsboro;
+      top: 0;
+      padding: 0;
+      width: 100%;
+      margin: 0;
+  }
+  .nav1-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 95%;
+  }
+  .logo {
+    font-weight: bold;
+  }
+  .nav1{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2.5rem;
+  }
+  .nav1-menu {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    margin-left: 360px;
+    padding: 0;
+    
+  }
+  .nav1-menu li a {
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+  
+  }
+  .nav1-menu li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    height: 4px;
+    width: 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Choisis ta couleur ici */
+    transition: width 0.1s ;
+  }
+  .nav1-menu li a:hover::after {
+    width: 100%;
+  }
+  .nav1-button {
+    display: flex;
+    gap: 1rem;
+    top: 0;
+    margin: 0;
+  }
+  .btn-logout{
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    margin-right: 20px;
+  }

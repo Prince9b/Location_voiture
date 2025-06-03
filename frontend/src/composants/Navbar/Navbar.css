@@ -1,0 +1,125 @@
+  .navbar {
+      background-color: var(--primary-color);
+      top: 0;
+      padding: 0;
+      width: 100%;
+      margin: 0;
+  }
+  .navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 95%;
+  }
+ 
+ 
+  .nav{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2.5rem;
+  }
+  .navbar-menu {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    margin-left: 360px;
+    padding: 0;
+    
+  }
+  .navbar-menu li a {
+    color: var(--black-color);
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+  
+  }
+  .navbar-menu li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    height: 4px;
+    width: 0;
+   background: var(--secondary-color); 
+    transition: width 0.1s ;
+  }
+  .navbar-menu li a:hover::after {
+    width: 100%;
+  }
+  .navbar-button {
+    display: flex;
+    top: 0;
+    margin: 0;
+    
+  }
+.btn-register{
+    border: var(--secondary-color) solid 1px;
+    border-radius: 8px;
+    padding: 0.75rem 0.5rem;
+    color: var(--secondary-color);
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+    margin-left: -150px;
+  }
+.btn-register:hover{
+    background-color: var(--secondary-color);
+    color: black;
+  }
+.btn-login{
+    border: var(--secondary-color) solid 2px;
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+    margin-left: 10px;
+
+  }
+.btn-login:hover{
+    background-color: var(--secondary-color);
+    color: black;
+  }
+
+  .bt-logout{
+    border: var(--secondary-color) solid 2px;
+    background-color: var(--secondary-color);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+    margin-left: 10px;
+
+  }
+.user-menu {
+  position: relative;
+}
+
+.btn-user {
+  border: var(--secondary-color) solid 2px;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  background: transparent;
+  color: var(--black-color);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-user:hover {
+  background-color: var(--secondary-color);
+  color: black;
+}
