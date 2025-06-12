@@ -1,0 +1,119 @@
+.admin-reservations {
+  padding: 40px 20px;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9fafb;
+}
+
+.admin-reservations h2 {
+  text-align: center;
+  color: #1f2937;
+  margin-bottom: 30px;
+  font-size: 26px;
+}
+
+.admin-reservations table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.admin-reservations th,
+.admin-reservations td {
+  padding: 16px 12px;
+  text-align: left;
+  font-size: 15px;
+}
+
+.admin-reservations th {
+  background-color: #e5e7eb;
+  color: #374151;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.admin-reservations tr:nth-child(even) {
+  background-color: #f3f4f6;
+}
+
+.admin-reservations td {
+  color: #4b5563;
+}
+
+.admin-reservations td:last-child {
+  display: flex;
+  gap: 10px;
+}
+
+/* Boutons */
+.btn-validate,
+.btn-delete {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 14px;
+}
+
+.btn-validate {
+  background-color: #10b981;
+  color: white;
+}
+
+.btn-validate:hover {
+  background-color: #059669;
+}
+
+.btn-delete {
+  background-color: #ef4444;
+  color: white;
+}
+
+.btn-delete:hover {
+  background-color: #dc2626;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .admin-reservations table,
+  .admin-reservations thead,
+  .admin-reservations tbody,
+  .admin-reservations th,
+  .admin-reservations td,
+  .admin-reservations tr {
+    display: block;
+  }
+
+  .admin-reservations tr {
+    margin-bottom: 20px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+  }
+
+  .admin-reservations td {
+    padding: 10px;
+    text-align: right;
+    position: relative;
+  }
+
+  .admin-reservations td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 13px;
+    color: #6b7280;
+  }
+
+  .admin-reservations th {
+    display: none;
+  }
+}

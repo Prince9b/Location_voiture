@@ -33,7 +33,16 @@ export default function Body() {
                 <img className='img' src={image} alt="image" />
             </div>
         </section>
-        <hr color='black' style={{margin:20}} />
+        <br />
+        <br />
+        <section className="body-container2">
+            <div className="details2">
+                <h1 className='title2'>Pourquoi nous choisir ?</h1>
+                <p className='description2'>Nous Donnez la priorité à votre satisfaction et efforcez-vous de rendre votre expérience de location de voiture aussi transparente que possible. <br /> Grâce à notre large sélection de véhicules bien entretenus, à nos prix compétitifs et à notre processus de réservation simple, <br /> Vous pouvez nous faire confiance pour répondre à vos besoins. Notre équipe de service à la clientèle dédiée est disponible partout dans le monde. <br /> Clock pour vous aider, en veillant à ce que vous receviez le soutien que vous méritez. Que vous ayez besoin d’une voiture pour un <br /> Escapade d’un week-end ou un long voyage en voiture, choisissez-nous pour un voyage agréable et sans tracas..</p>
+            </div>
+        </section>
+              <br />
+              <br />  
     </div>
   )
 }

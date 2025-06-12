@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import './Login.css'; 
 
 export default function AdminLogin() {
   const navigate = useNavigate();
@@ -43,9 +44,9 @@ export default function AdminLogin() {
   };
 
   return (
-    <div className="admin-login-container">
-      <div className="admin-login-form">
-        <h2>Connexion Admin</h2>
+    <div className="login-container">
+      <div className="login-form">
+        <h2>Admin</h2>
         {error && <div className="error-message">{error}</div>}
         <form onSubmit={handleLogin}>
           <input

@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import './login.css';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../../AuthContext'; // ← ajoute ceci
+import { useAuth } from '../../AuthContext'; 
 
 axios.defaults.withCredentials = true;
 
 export default function Login() {
   const navigate = useNavigate();
-  const { login } = useAuth(); // ← récupère la fonction login du contexte
+  const { login } = useAuth(); 
 
   const [formData, setFormData] = useState({
     email: '',

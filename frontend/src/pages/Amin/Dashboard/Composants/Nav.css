@@ -1,5 +1,5 @@
 .nav1 {
-      background-color: gainsboro;
+      background-color: var(--primary-color);
       top: 0;
       padding: 0;
       width: 100%;
@@ -42,7 +42,7 @@
     bottom: -6px;
     height: 4px;
     width: 0;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Choisis ta couleur ici */
+    background:var(--secondary-color); 
     transition: width 0.1s ;
   }
   .nav1-menu li a:hover::after {
@@ -65,6 +65,6 @@
     text-transform: uppercase;
     letter-spacing: 0.5px;
     font-size: 0.9rem;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: var(--secondary-color);
     margin-right: 20px;
   }

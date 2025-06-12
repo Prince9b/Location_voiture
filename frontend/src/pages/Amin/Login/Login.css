@@ -1,11 +1,10 @@
-/* login.css */
 
 .login-container {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--secondary-color);
   padding: 20px;
 }
 
@@ -59,7 +58,7 @@
 
 .login-form button {
   padding: 1rem;
-  background: linear-gradient(to right, #667eea, #764ba2);
+  background: var(--secondary-color);
   color: white;
   border: none;
   border-radius: 8px;

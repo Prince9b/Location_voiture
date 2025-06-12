@@ -28,5 +28,17 @@ class AdminAuthController extends Controller
             'token_type' => 'Bearer',
         ]);
     }
+
+   public function logout(Request $request)
+{
+    if ($request->user()) {
+        $request->user()->currentAccessToken()->delete();
+        return response()->json(['message' => 'Déconnexion réussie']);
+    }
+
+    return response()->json(['message' => 'Aucun utilisateur authentifié'], 401);
+}
+
+
     
 }

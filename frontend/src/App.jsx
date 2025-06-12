@@ -11,6 +11,11 @@ import Voitures from './pages/Voitures/Voitures'
 import Contact from './pages/Contact_Us/Contact'
 import Emplacement from './pages/Emplacement/Emplacement'
 import { AuthProvider } from './AuthContext'
+import VoituresPage from './pages/Amin/Dashboard/VoituresPage'
+import UsersPage from './pages/Amin/Dashboard/UsersPage'
+import Details from './pages/Details/Details'
+import Reservation from './pages/Amin/Dashboard/Reservation'
+import MesReservations from './pages/MesReservations/MesReservations'
 
 function App() {
 
@@ -23,13 +28,34 @@ function App() {
         <Route path='/login' element={<Login/>} />
         <Route path='/emplacement' element={<Emplacement/>} />
         <Route path='/voitures' element={<Voitures/>} />
+        <Route path='/details/:id' element={<Details/>} />
         <Route path='/contact' element={<Contact/>} />
-        <Route path='/admin/login' element={<LoginAdmin/>} />
+        <Route path='/mesreservation' element={<MesReservations/>} />
+        <Route path='/admin' element={<LoginAdmin/>} />
+        
         <Route path='/admin/dashboard' element={
           <AdminRoute>
-            <AdminDashboard/>  
+            <AdminDashboard/>
           </AdminRoute>
         } />
+        <Route path='/admin/dashboard/voitures' element={
+          <AdminRoute>
+            <VoituresPage/>
+          </AdminRoute>
+        } />
+
+        <Route path='/admin/dashboard/users' element={
+          <AdminRoute>
+            <UsersPage/>
+          </AdminRoute>
+        } />
+
+        <Route path='/admin/dashboard/reservations' element={
+          <AdminRoute>
+            <Reservation/>
+          </AdminRoute>
+        } />
+
       </Routes>
       </AuthProvider>
     </>

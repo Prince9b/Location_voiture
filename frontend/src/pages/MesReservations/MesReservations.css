@@ -1,0 +1,113 @@
+.mes-reservations {
+  padding: 40px 20px;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9fafb;
+}
+
+.mes-reservations h2 {
+  text-align: center;
+  color: #1f2937;
+  margin-bottom: 30px;
+  font-size: 26px;
+}
+
+.mes-reservations table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.mes-reservations th,
+.mes-reservations td {
+  padding: 14px 12px;
+  text-align: left;
+  font-size: 15px;
+}
+
+.mes-reservations th {
+  background-color: #e5e7eb;
+  color: #374151;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.mes-reservations tr:nth-child(even) {
+  background-color: #f3f4f6;
+}
+
+.mes-reservations td {
+  color: #4b5563;
+}
+
+/* Status color coding */
+.mes-reservations td:last-child {
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.mes-reservations td:last-child:before {
+  content: '• ';
+  margin-right: 4px;
+}
+
+.mes-reservations td:last-child {
+  color: #10b981;
+}
+
+.mes-reservations td:last-child:has(:contains("annulée")) {
+  color: #ef4444;
+}
+
+.mes-reservations td:last-child:has(:contains("en attente")) {
+  color: #f59e0b;
+}
+
+/* Message aucun historique */
+.mes-reservations p {
+  text-align: center;
+  font-size: 16px;
+  color: #6b7280;
+}
+
+/* Responsive table */
+@media (max-width: 768px) {
+  .mes-reservations table,
+  .mes-reservations thead,
+  .mes-reservations tbody,
+  .mes-reservations th,
+  .mes-reservations td,
+  .mes-reservations tr {
+    display: block;
+  }
+
+  .mes-reservations tr {
+    margin-bottom: 20px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+  }
+
+  .mes-reservations td {
+    padding: 10px;
+    text-align: right;
+    position: relative;
+  }
+
+  .mes-reservations td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 13px;
+    color: #6b7280;
+  }
+
+  .mes-reservations th {
+    display: none;
+  }
+}

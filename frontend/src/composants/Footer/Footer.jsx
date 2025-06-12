@@ -4,36 +4,33 @@ import { Link } from 'react-router-dom'
 
 export default function Footer() {
   return (
-    <div>
-        <footer class="footer">
-        <div class="container">
-    <div class="footer-section about">
-      <h2>DisciversCars</h2>
-      <p>Votre partenaire de confiance pour la location de voitures, offrant des services fiables et rapides.</p>
-    </div>
+    <footer className="footer">
+      <div className="footer-content">
+        <div className="footer-section">
+          <h2>DisciversCars</h2>
+          <p>Location de voitures rapide, simple et fiable à Bamako et partout au Mali.</p>
+        </div>
 
-    <div class="footer-section links">
-      <h3>Liens utiles</h3>
-      <ul>
-        <li><Link to='/'>Acceuil</Link></li>
-        <Link to='/voitures'>Nos voitures</Link>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </div>
+        <div className="footer-section">
+          <h3>Liens utiles</h3>
+          <ul>
+            <li><Link to="/">Accueil</Link></li>
+            <li><Link to="/voitures">Nos voitures</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
+          </ul>
+        </div>
 
-    <div class="footer-section contact">
-      <h3>Contactez-nous</h3>
-      <p>Email : contact@disciverscars.com</p>
-      <p>Téléphone : +228 90 00 00 00</p>
-      <p>Adresse : Lomé, Togo</p>
-    </div>
-  </div>
+        <div className="footer-section">
+          <h3>Contact</h3>
+          <p>Email : contact@disciverscars.com</p>
+          <p>Téléphone : +223 60219104</p>
+          <p>Adresse : Bamako, Mali</p>
+        </div>
+      </div>
 
-  <div class="footer-bottom">
-    &copy; 2025 DisciversCars. Tous droits réservés.
-  </div>
-</footer>
-
-    </div>
+      <div className="footer-bottom">
+        &copy; 2025 DisciversCars. Tous droits réservés.
+      </div>
+    </footer>
   )
 }

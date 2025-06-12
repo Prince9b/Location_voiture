@@ -2,6 +2,7 @@ import React from 'react';
 import { useAuth } from '../../AuthContext';
 import { Link, useNavigate, } from 'react-router-dom';
 import './Navbar.css'; 
+import logo from '../../assets/logo.jpg'; 
 
 const Navbar = () => {
   const { user, logout } = useAuth();
@@ -22,7 +23,9 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <div className="nav-container">
-        <img className='logo' src="" alt="logo" />
+         <div className="logo-container">
+          <img className="logo" src={logo} alt="Logo" />
+        </div>
         <div className="nav">
                 <ul className='navbar-menu'>
                   <li><Link to='/'>Acceuil</Link></li>
@@ -32,6 +35,7 @@ const Navbar = () => {
                 </ul>
         {user ? (
           <>
+            <Link to='/mesreservation' className='btn-reservation'>Mes Réservations</Link>
             <span>Bienvenue, {user.name}</span>
             <button onClick={handleLogout} className="bt-logout">
               Déconnexion

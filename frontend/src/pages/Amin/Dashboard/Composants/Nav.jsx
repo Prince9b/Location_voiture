@@ -31,11 +31,12 @@ export default function Nav() {
             <h3>Admin</h3>
             <div className="nav1">
                 <ul className='nav1-menu'>
-                  <li><Link to='/'>Dashboard</Link></li>
-                  <li><Link to='/'>Users</Link></li>
-                  <li><Link to='/dashboard/voitures'>Voitures</Link></li>
+                  <li><Link to='/admin/dashboard'>Dashboard</Link></li>
+                  <li><Link to='/admin/dashboard/users'>Users</Link></li>
+                  <li><Link to='/admin/dashboard/voitures'>Voitures</Link></li>
+                  <li><Link to='/admin/dashboard/reservations'>Réservations</Link></li>
                 </ul>
-            <button className='btn-logout' onClick={handleLogout}>
+            <button className='bt-logout' onClick={handleLogout}>
                 Se déconnecter
             </button>     
          </div>

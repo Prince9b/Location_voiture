@@ -11,6 +11,17 @@
     justify-content: space-between;
     width: 95%;
   }
+  .logo-container {
+  flex-shrink: 0;
+}
+
+.logo {
+  height: 50px;
+  width: auto;
+  margin-right: 20px;
+}
+
+ 
  
  
   .nav{
@@ -18,14 +29,13 @@
       justify-content: space-between;
       align-items: center;
       gap: 2.5rem;
+      margin-top: -40px;
   }
   .navbar-menu {
     display: flex;
     gap: 1.5rem;
     list-style: none;
-    margin-left: 360px;
-    padding: 0;
-    
+    margin-left: 260px;
   }
   .navbar-menu li a {
     color: var(--black-color);
@@ -64,7 +74,7 @@
     text-transform: uppercase;
     letter-spacing: 0.5px;
     font-size: 0.9rem;
-    margin-left: -150px;
+    margin-left: -250px;
   }
 .btn-register:hover{
     background-color: var(--secondary-color);
@@ -123,3 +133,22 @@
   background-color: var(--secondary-color);
   color: black;
 }
+.btn-reservation{
+   color: var(--black-color);
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+}
+.btn-reservation::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    height: 4px;
+    width: 0;
+    background: var(--secondary-color); 
+    transition: width 0.1s ;
+}
+.btn-reservation:hover::after {
+    width: 100%;
+} 

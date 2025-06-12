@@ -1,11 +1,10 @@
-/* login.css */
 
 .login-container {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: var(--secondary-color);
+  background: yellow;
   padding: 20px;
 }
 
@@ -60,7 +59,7 @@
 .login-form button {
   padding: 1rem;
   background: var(--primary-color);
-  color: var(--secondary-color);
+  color:yellow;
   border: none;
   border-radius: 8px;
   font-size: 1rem;

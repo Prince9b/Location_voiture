@@ -1,0 +1,115 @@
+.imag{
+    width: 200px;
+}
+.voitures-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.voitures-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.voitures-table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.voitures-table th,
+.voitures-table td {
+  padding: 12px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.voitures-table th {
+  background-color: #f5f5f5;
+  font-weight: bold;
+}
+
+.voitures-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+.voiture-img {
+  height: 60px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.btn {
+  padding: 6px 12px;
+  margin: 2px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.edit-btn {
+  background-color: #3498db;
+  color: white;
+}
+
+.delete-btn {
+  background-color: #e74c3c;
+  color: white;
+}
+.voitures-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px;
+}
+
+.add-btn {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: white;
+  padding: 20px;
+  width: 400px;
+  border-radius: 6px;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-form label {
+  margin-top: 10px;
+}
+
+.modal-form input,
+.modal-form select {
+  padding: 6px;
+  margin-top: 4px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.cancel-btn {
+  background-color: #e74c3c;
+  color: white;
+}
