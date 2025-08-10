@@ -19,7 +19,7 @@ return new class extends Migration
             $table->date('date_debut');
             $table->date('date_fin');
             $table->decimal('prix_total', 10, 2);
-            $table->string('status')->default('active');
+            $table->string('status')->default('En cours');
             $table->timestamps();
 
         });

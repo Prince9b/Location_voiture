@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './login.css';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../AuthContext'; 
 
 axios.defaults.withCredentials = true;
@@ -34,8 +34,7 @@ export default function Login() {
       const res = await axios.post('http://localhost:8000/api/login', formData);
       
       // ici on met à jour le contexte d'authentification
-      login(res.data.user, res.data.token); // ← c’est ça qui déclenche le rendu conditionnel dans la navbar
-
+      login(res.data.user, res.data.token); // c’est ça qui déclenche le rendu conditionnel dans la navbar
       navigate('/');
     } catch (err) {
       if (err.response?.data?.errors) {
@@ -58,10 +57,12 @@ export default function Login() {
           {errors.email && <div className="error">{errors.email}</div>}
           <input type="text" placeholder='Email' name='email' onChange={handleChange} value={formData.email} />
 
-          <input type="password" placeholder='Mot de passe' name='password' onChange={handleChange} value={formData.password} />
+          <input type="password" placeholder='Mot de passe' name='password' onChange={handleChange} value={formData.password} id='password' />
+
           {errors.password && <div className="error">{errors.password}</div>}
 
           <button type='submit'>Login</button>
+          <p>Vous n'avez pas de compte? <Link to="/register" className='pasdecompte' >SignUp</Link></p>
         </form>
       </div>
     </div>

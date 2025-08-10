@@ -5,6 +5,8 @@ import './VoituresListes.css';
 const VoituresListes = () => {
   const [voitures, setVoitures] = useState([]);
   const [showModal, setShowModal] = useState(false);
+  const [showEdit, setShowEdit]= useState(false)
+  const [selectedVoitureId, setSelectedVoitureId]= useState('')
   const [form, setForm] = useState({
     marque: '',
     description: '',
@@ -50,9 +52,7 @@ const VoituresListes = () => {
         formData.append(key, form[key]);
       }
 
-      await axios.post('http://localhost:8000/api/voitures', formData, {
-        headers: { 'Content-Type': 'multipart/form-data' },
-      });
+      await axios.post('http://localhost:8000/api/voitures')
 
       alert('Voiture ajoutée !');
       setShowModal(false);
@@ -69,6 +69,33 @@ const VoituresListes = () => {
       console.error('Erreur ajout voiture', err);
     }
   };
+  const handlePut= async (e,id) => {
+    e.preventDefault()
+    try {
+      const formData= new FormData()
+      for( let key in form){
+        formData.append(key, form[key])
+      }
+      await axios.post(`http://localhost:8000/api/voitures/${selectedVoitureId}?_method=PUT`, formData,{
+        headers: {'Content-Type':'multipart/form-data'}
+      })
+      alert('Voiture modifiée')
+      setShowEdit(false)
+      fetchvoitures()
+      setForm({
+        marque:'',
+        description: '',
+        prix_par_jour: '',
+        quantite: '',
+        status: 'disponible',
+        image: null,
+      })
+
+    }catch(err){
+      console.error('Erreur lors de la modif', err);
+      
+    }
+  }
 
   return (
     <>
@@ -104,7 +131,20 @@ const VoituresListes = () => {
                 <td>{voiture.quantite}</td>
                 <td>{voiture.statut}</td>
                 <td>
-                  <button className="btn edit-btn">Éditer</button>
+                  <button className="btn edit-btn" onClick={()=>{
+                      setShowEdit(true)
+                      setSelectedVoitureId(voiture.id)
+                      setForm({
+                        marque: voiture.marque,
+                        description: voiture.description,
+                        prix_par_jour: voiture.prix_par_jour,
+                        quantite: voiture.quantite,
+                        status: 'disponible',
+                        image: null,
+                      })
+                      
+                   }}
+                   >Éditer</button>
                   <button className="btn delete-btn" onClick={() => deletevoiture(voiture.id)}>Enlever</button>
                 </td>
               </tr>
@@ -112,7 +152,7 @@ const VoituresListes = () => {
           </tbody>
         </table>
       </div>
-
+        
       {showModal && (
         <div className="modal-backdrop">
           <div className="modal">
@@ -147,6 +187,42 @@ const VoituresListes = () => {
           </div>
         </div>
       )}
+
+      {showEdit && (
+        <div className="modal-backdrop">
+          <div className="modal">
+            <h2>Modifier une voiture</h2>
+            <form onSubmit={(e) => handlePut(e, selectedVoitureId)} className="modal-form">
+            <label>Marque</label>
+            <input type="text" name="marque" value={form.marque} onChange={handleChange} required />
+          
+            <label>Description</label>
+            <input type="text" name="description" value={form.description} onChange={handleChange} required />
+          
+            <label>Prix / jour</label>
+            <input type="number" name="prix_par_jour" value={form.prix_par_jour} onChange={handleChange} required />
+          
+            <label>Quantité</label>
+            <input type="number" name="quantite" value={form.quantite} onChange={handleChange} required />
+          
+            <label>Statut</label>
+            <select name="status" value={form.status} onChange={handleChange}>
+              <option value="disponible">Disponible</option>
+              <option value="indisponible">Indisponible</option>
+            </select>
+          
+            <label>Image</label>
+            <input type="file" name="image" accept="image/*" onChange={handleChange} />
+
+        <div className="modal-actions">
+          <button type="submit" className="btn add-btn">Valider</button>
+          <button type="button" className="btn cancel-btn" onClick={() => setShowEdit(false)}>Annuler</button>
+        </div>
+      </form>
+    </div>
+  </div>
+)}
+
     </>
   );
 };

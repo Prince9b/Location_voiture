@@ -1,0 +1,15 @@
+#root{
+   
+}
+body{
+    
+}
+@media (max-width : 800px){
+    #root{
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+        padding: 0;
+
+    }
+}

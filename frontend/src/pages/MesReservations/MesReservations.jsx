@@ -27,6 +27,8 @@ export default function MesReservations() {
   return (
     <div>
         <Navbar />
+        <br />
+        <br />
     <div className="mes-reservations">
       <h2>Mon Historique de Réservations</h2>
       {reservations.length === 0 ? (

@@ -33,7 +33,7 @@ class ReservationController extends Controller
         'date_debut' => $request->date_debut,
         'date_fin' => $request->date_fin,
         'prix_total' => $request->prix_total,
-        'status' => 'active',
+        'status' => 'En cours',
     ]);
 
     $voiture->quantite = (int)$voiture->quantite - 1;

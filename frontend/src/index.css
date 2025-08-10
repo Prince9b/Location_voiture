@@ -5,21 +5,24 @@ body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
-
 }
 :root {
     /* Variables des couleurs*/
-    --white-color: #fff;
-    --dark-color: #252525;
-    --primary-color: #FAFAFA;
-    --secondary-color: #f3961c;
-    --light-pink-color: #faf4f5;
-    --medium-gray-color: #ccc;
+  --white-color: #fff;
+  --dark-color: #252525;
+  --primary-color: #FAFAFA;
+  --secondary-color: #f3961c;
+  --light-pink-color: #faf4f5;
+  --medium-gray-color: #ccc;
 
-    /* Variables taille de police*/
-    
-
-    /* Variables largeur de police */
    
 }
+a{
+  text-decoration: none;
+}
 
+@media screen and (max-width: 1499px) {
+  .bloc{
+    width: 90%;
+  }
+}

@@ -10,7 +10,6 @@ export default function ReservationForm({ voitureId }) {
   const [message, setMessage] = useState('')
 
   useEffect(() => {
-    // Charger le prix par jour au montage
     const fetchVoiture = async () => {
       try {
         const res = await axios.get(`http://localhost:8000/api/voitures/${voitureId}`)
@@ -57,10 +56,10 @@ export default function ReservationForm({ voitureId }) {
         }
       )
 
-      setMessage('✅ Réservation effectuée avec succès !')
+      setMessage('✅ Réservation effectuée avec succès !, Nous vous contacterons !')
     } catch (err) {
       console.error(err)
-      setMessage(err.response?.data?.message || '❌ Une erreur est survenue')
+      setMessage(err.response?.data?.message || ' Une erreur est survenue')
     }
   }
 

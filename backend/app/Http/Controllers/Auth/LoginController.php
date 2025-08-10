@@ -35,6 +35,6 @@ class LoginController extends Controller
     }
 
     public function index(){
-        return$users= User::all();
+        return $users= User::all();
     }
 }

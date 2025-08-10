@@ -4,33 +4,34 @@ import { Link } from 'react-router-dom'
 
 export default function Footer() {
   return (
+    <div className='container'>
     <footer className="footer">
-      <div className="footer-content">
-        <div className="footer-section">
-          <h2>DisciversCars</h2>
-          <p>Location de voitures rapide, simple et fiable à Bamako et partout au Mali.</p>
-        </div>
-
-        <div className="footer-section">
+      <div className="liens">
           <h3>Liens utiles</h3>
-          <ul>
-            <li><Link to="/">Accueil</Link></li>
-            <li><Link to="/voitures">Nos voitures</Link></li>
-            <li><Link to="/contact">Contact</Link></li>
-          </ul>
-        </div>
-
-        <div className="footer-section">
-          <h3>Contact</h3>
-          <p>Email : contact@disciverscars.com</p>
-          <p>Téléphone : +223 60219104</p>
-          <p>Adresse : Bamako, Mali</p>
-        </div>
+          <a><Link to="/">Accueil</Link></a>
+          <a><Link to="/voitures">Nos voitures</Link></a>
+          <a><Link to="/contact">Contact</Link></a>
       </div>
-
-      <div className="footer-bottom">
-        &copy; 2025 DisciversCars. Tous droits réservés.
+      <div className="d2">
+        <h3>Contact</h3>
+        <p>Email : contact@disciverscars.com</p>
+        <p>Téléphone : +223 60219104</p>
+        <p>Adresse : Bamako, Mali</p>
       </div>
+      <div className="reseaux">
+        <h3>Nos réseaux</h3>
+        <a href="/">Github</a>
+        <a href="/">Fb</a>
+        <a href="/">Pt</a>
+      </div> 
+      <div className="reseaux">
+        <h3>Nos réseaux</h3>
+        <a href="/">Github</a>
+        <a href="/">Fb</a>
+        <a href="/">Pt</a>
+      </div>           
     </footer>
+      <p className='f1'>&copy; 2025 DisciversCars. Tous droits réservés.</p>
+    </div>
   )
 }

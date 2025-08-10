@@ -7,6 +7,8 @@ export default function Contact() {
   return (
     <div>
         <Navbar />
+        <br />
+        <br />
         <div className="con-container">
           <div className="contact"></div>
           <h1>Contactez-nous</h1>

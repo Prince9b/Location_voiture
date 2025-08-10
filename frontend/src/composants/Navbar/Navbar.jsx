@@ -2,7 +2,7 @@ import React from 'react';
 import { useAuth } from '../../AuthContext';
 import { Link, useNavigate, } from 'react-router-dom';
 import './Navbar.css'; 
-import logo from '../../assets/logo.jpg'; 
+import logo from '../../assets/logo.svg'; 
 
 const Navbar = () => {
   const { user, logout } = useAuth();
@@ -16,44 +16,40 @@ const Navbar = () => {
       },
     }).then(() => {
       logout();
-      navigate('/login');
+      navigate('/');
     });
   };
 
   return (
-    <div className="navbar">
-      <div className="nav-container">
-         <div className="logo-container">
+    <header className="header">
+        <div className="logo-container" contentEditable="false">
           <img className="logo" src={logo} alt="Logo" />
         </div>
-        <div className="nav">
-                <ul className='navbar-menu'>
-                  <li><Link to='/'>Acceuil</Link></li>
-                  <li><Link to='/voitures'>Voitures</Link></li>
-                  <li><Link to='/emplacement'>Emplacement</Link></li>
-                  <li><Link to='/contact'>Contactez-nous</Link></li>
-                </ul>
+        <nav className="navbar">
+                  <a className='a'><Link to='/'>Home</Link></a>
+                  <a className='a'><Link to='/voitures'>Voitures</Link></a>
+                  <a className='a'><Link to='/emplacement'>Emplacement</Link></a>
+                  <a className='a'><Link to='/contact'>Contactez-nous</Link></a>
         {user ? (
           <>
             <Link to='/mesreservation' className='btn-reservation'>Mes Réservations</Link>
-            <span>Bienvenue, {user.name}</span>
-            <button onClick={handleLogout} className="bt-logout">
+            <button onClick={handleLogout}>
               Déconnexion
             </button>
+            <span>{user.name}</span>
           </>
         ) : (
           <>
-            <button onClick={() => navigate('/login')} className="btn-login">
+            <button onClick={() => navigate('/login')}>
               Connexion
             </button>
-            <button onClick={() => navigate('/register')} className="btn-register">
+            <button onClick={() => navigate('/register')}>
               Inscription
             </button>
           </>
         )}
-        </div>
-      </div>
-    </div>
+        </nav>
+    </header>
   );
 };
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './Register.css'
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function Register() {
 
@@ -51,12 +51,14 @@ export default function Register() {
                 <input type="text" placeholder='Nom' name='name' onChange={handleChange} value={formData.name} />
                 <input type="text" placeholder='Email' name='email' onChange={handleChange} value={formData.email}/>
                 <input type="text" placeholder='Téléphone' name='tel' onChange={handleChange} value={formData.tel} />
-                <input type="password" placeholder='Mot de passe'name='password' onChange={handleChange} value={formData.password}/>
+                <input type="password" placeholder='Mot de passe'name='password' onChange={handleChange} value={formData.password}  />
+
 
                 {errors.password && <div className="error">{errors.password}</div>}
 
 
                 <button type='submit'>S'inscrire</button>
+                <p>Vous avez un compte? <Link to="/login" className='compte' >Login</Link></p>
             </form>
         </div>
     </div>

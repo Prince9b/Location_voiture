@@ -2,10 +2,12 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import './Cars.css'
+import {motion} from 'framer-motion'
 
 export default function Cars() {
 
     const [voitures, setVoitures]= useState([])
+    
 
     useEffect(() => {
         fetchvoitures();

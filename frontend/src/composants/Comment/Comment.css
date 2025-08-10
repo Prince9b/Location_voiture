@@ -1,0 +1,64 @@
+.how-section {
+  background: #f9f9f9;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.how-title {
+  font-size: 32px;
+  color: var(--secondary-color);
+  margin-bottom: 50px;
+  font-family: "Miniver", sans-serif;
+}
+
+.how-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.how-card {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  width: 280px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.how-card:hover {
+  transform: translateY(-8px);
+}
+
+.how-step {
+  font-size: 50px;
+  color: var(--secondary-color);
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.how-card h3 {
+  font-size: 20px;
+  color: var(--dark-color);
+  margin-bottom: 10px;
+}
+
+.how-card p {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+}
+
+@media screen and (max-width: 800px) {
+  .how-title {
+    font-size: 26px;
+    margin-left: 280px;
+  }
+
+  .how-card {
+    width: 100%;
+    margin-left: 250px;
+  }
+}

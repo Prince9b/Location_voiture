@@ -1,8 +1,7 @@
-
 .voitures-container {
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 20px;
+    margin: 70px;
+    position:relative;
 }
 
 .voitures-title {
@@ -35,7 +34,7 @@
 }
 
 .car-card {
-    background: var(--primary-color);
+    background:var(--primary-color);
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 10px 20px rgba(0,0,0,0.08);
@@ -155,7 +154,6 @@
     color: var(--primary-color);
 }
 
-/* Effets spéciaux */
 @media (min-width: 768px) {
     .car-card {
         transform-style: preserve-3d;

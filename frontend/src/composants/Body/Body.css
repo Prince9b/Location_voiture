@@ -1,8 +1,7 @@
 .body{
     background-color: var(--primary-color);
-    margin: 0;
-    padding: 0;
     min-width: 100vh;
+    margin-top: 50px;
 }
 
 .body-container{
@@ -23,6 +22,7 @@
     display: flex;
     justify-content: flex-end;
 }
+
 .body-container .details .description{
     font-size: var(--font-size-m);
     color: var(--dark-color);
@@ -64,4 +64,45 @@
     padding: 30px;
     margin-top: -150px;
     border: none;
+}
+@media screen and (max-width: 800px) { 
+    .body{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .body-container {
+    flex-direction: column;
+    
+  }
+  .body-container .details .title {
+    font-size: 30px;         
+    margin-top: 20px;
+            
+  }
+  .body-container .details .description{
+    width: 90%;
+    margin-left:150px;
+    border: none;
+    
+    
+  }
+  .buttons{
+    margin-left: 400px;
+    margin-bottom: 100px;
+  }
+   h1{
+        font-size: 30px;
+        border: none;
+        margin-left: 300px;
+        
+    }
+    .image {
+        width:90%;
+        border: none;
+        margin-left: 150px;
+    }
+   
+    
 }
