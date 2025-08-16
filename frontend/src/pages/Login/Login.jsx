@@ -3,12 +3,14 @@ import './login.css';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../AuthContext'; 
+import { CircleLoader, ClipLoader } from 'react-spinners';
 
 axios.defaults.withCredentials = true;
 
 export default function Login() {
   const navigate = useNavigate();
   const { login } = useAuth(); 
+  const [loading, setLoading]= useState(false)
 
   const [formData, setFormData] = useState({
     email: '',
@@ -30,6 +32,7 @@ export default function Login() {
     }
 
     try {
+      setLoading(true);
       await axios.get('http://localhost:8000/sanctum/csrf-cookie');
       const res = await axios.post('http://localhost:8000/api/login', formData);
       
@@ -44,8 +47,11 @@ export default function Login() {
       } else {
         setGeneralError("Une erreur inattendue s'est produite.");
       }
+    } finally{
+      setLoading(false);
     }
   };
+
 
   return (
     <div className='login-container'>
@@ -61,7 +67,9 @@ export default function Login() {
 
           {errors.password && <div className="error">{errors.password}</div>}
 
-          <button type='submit'>Login</button>
+          <button type='submit' disabled={loading}>
+            {loading ? <ClipLoader size={20} color='#fff' /> : 'Login'}
+          </button>
           <p>Vous n'avez pas de compte? <Link to="/register" className='pasdecompte' >SignUp</Link></p>
         </form>
       </div>

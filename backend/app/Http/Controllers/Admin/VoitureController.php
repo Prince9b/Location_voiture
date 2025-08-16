@@ -98,4 +98,11 @@ class VoitureController extends Controller
             'data' => $voiture
         ]);
     }
+
+    public function rechercher(Request $request){
+        $query= $request->input('q');
+        $voitures= Voitures::where('marque', 'ILIKE', "%$query%")->get();
+        return response()->json($voitures, 200);
+    }
+    
 }

@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useAuth } from '../../AuthContext';
-import { Link, useNavigate, } from 'react-router-dom';
-import './Navbar.css'; 
-import logo from '../../assets/logo.svg'; 
-
+import { Link, NavLink, useNavigate } from 'react-router-dom';
+import './Navbar.css';
+import logo from '../../assets/logo.svg';
+import { FaBars, FaTimes } from 'react-icons/fa';
+import {CiLogout} from "react-icons/ci"
 const Navbar = () => {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const handleLogout = () => {
     fetch('/api/logout', {
@@ -17,38 +19,47 @@ const Navbar = () => {
     }).then(() => {
       logout();
       navigate('/');
+      setMenuOpen(false);
     });
   };
 
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+
+  const closeMenu = () => setMenuOpen(false);
+
   return (
     <header className="header">
-        <div className="logo-container" contentEditable="false">
-          <img className="logo" src={logo} alt="Logo" />
-        </div>
-        <nav className="navbar">
-                  <a className='a'><Link to='/'>Home</Link></a>
-                  <a className='a'><Link to='/voitures'>Voitures</Link></a>
-                  <a className='a'><Link to='/emplacement'>Emplacement</Link></a>
-                  <a className='a'><Link to='/contact'>Contactez-nous</Link></a>
+      <div className="logo-container" contentEditable="false">
+        <img className="logo" src={logo} alt="Logo" />
+      </div>
+
+      <nav className={`navbar ${menuOpen ? 'open' : ''}`}>
+        <NavLink onClick={closeMenu} className="nav-link" to="/">Home</NavLink>
+        <NavLink onClick={closeMenu} className="nav-link" to="/voitures">Voitures</NavLink>
+        <NavLink onClick={closeMenu} className="nav-link" to="/emplacement">Emplacement</NavLink>
+        <NavLink onClick={closeMenu} className="nav-link" to="/contact">Contactez-nous</NavLink>
+        
+
         {user ? (
           <>
-            <Link to='/mesreservation' className='btn-reservation'>Mes Réservations</Link>
-            <button onClick={handleLogout}>
-              Déconnexion
-            </button>
-            <span>{user.name}</span>
+            <Link onClick={closeMenu} to="/mesreservation" className="btn-reservation">Mes Réservations</Link>
+            <CiLogout onClick={handleLogout} className='btn-logoutt' color='orange' size={30}/>
           </>
         ) : (
           <>
-            <button onClick={() => navigate('/login')}>
-              Connexion
-            </button>
-            <button onClick={() => navigate('/register')}>
-              Inscription
-            </button>
+            <Link onClick={closeMenu} to="/login" className="btn-link">Connexion</Link>
+            <Link onClick={closeMenu} to="/register" className="btn-link">Inscription</Link>
           </>
         )}
-        </nav>
+      </nav>
+
+      <button
+        className="menu-toggle"
+        onClick={toggleMenu}
+        aria-label={menuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
+      >
+        {menuOpen ? <FaTimes /> : <FaBars />}
+      </button>
     </header>
   );
 };

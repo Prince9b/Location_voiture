@@ -1,5 +1,6 @@
 .emp-container{
     justify-content: center;
+    padding: 5% 10px;
 }
 .section1{
     display: flex;
@@ -32,4 +33,16 @@
 }
 .section2 p{
     text-decoration: none;
-    margin-right: 50px;}
+    margin-right: 50px;
+}
+@media (max-width: 600px){
+    .emp-container{
+        
+    }
+    .section1, .section2{
+        flex-direction: column;
+        overflow: hidden;
+        text-align: center;
+    }
+   
+}

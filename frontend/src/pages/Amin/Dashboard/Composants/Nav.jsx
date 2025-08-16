@@ -18,7 +18,7 @@ export default function Nav() {
     });
 
     localStorage.removeItem('admin_token');
-    navigate('/admin/login');
+    navigate('/admin');
   } catch (err) {
     console.error("Erreur lors de la déconnexion :", err.response?.data || err.message);
   }

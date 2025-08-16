@@ -1,6 +1,12 @@
+.loading{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .voitures-container {
     max-width: 1200px;
     margin: 70px;
+    margin-top: 5px;
     position:relative;
 }
 
@@ -34,7 +40,7 @@
 }
 
 .car-card {
-    background:var(--primary-color);
+    background:beige;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 10px 20px rgba(0,0,0,0.08);
@@ -140,7 +146,7 @@
     display: block;
     text-align: center;
     padding: 12px;
-    background: var(--primary-color);
+    background: transparent;
     text-decoration: none;
     border-radius: 6px;
     font-weight: 500;
@@ -150,16 +156,13 @@
 }
 
 .details-link:hover {
-    background: black;
+    background: var(--secondary-color);
     color: var(--primary-color);
 }
 
-@media (min-width: 768px) {
-    .car-card {
-        transform-style: preserve-3d;
-    }
-    
-    .car-card:hover {
-        transform: translateY(-10px) rotateX(5deg);
+@media (max-width: 768px) {
+    .voitures-container{
+        flex-direction: column;
+        margin-left: 30px;
     }
 }

@@ -15,6 +15,8 @@ Route::post('/login', [LoginController::class, 'login']);
 Route::middleware('auth:sanctum')->post('/logout', [LogoutController::class, 'logout']);
 Route::get('/users', [LoginController::class, 'index']);
 Route::get('/index', [VoitureController::class, 'index']);
+Route::get('/voitures/search', [VoitureController::class, 'rechercher']);
+
 Route::get('/voitures/{id}', [VoitureController::class, 'show']);
 
 Route::middleware('auth:sanctum')->post('/reservations', [ReservationController::class, 'store']);

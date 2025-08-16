@@ -1,7 +1,9 @@
 .how-section {
   background: #f9f9f9;
-  padding: 80px 20px;
+  padding: 20px 20px;
   text-align: center;
+  margin-top: 2px;
+
 }
 
 .how-title {
@@ -51,14 +53,23 @@
   line-height: 1.6;
 }
 
-@media screen and (max-width: 800px) {
-  .how-title {
-    font-size: 26px;
-    margin-left: 280px;
+@media (max-width: 768px){
+  .how-section{
+    display: flex;           
+    flex-direction: column;  
+    overflow-x: hidden; 
+    position: static;        
+    background-color: var(--secondary-color);
   }
-
-  .how-card {
-    width: 100%;
-    margin-left: 250px;
+  .how-title{
+    padding:2%;
+    color: black;
+  }
+  .how-container{
+    display: flex;
+    flex-direction: column;  
+    justify-content:center;
+    align-items: center;
+    gap: 5rem;
   }
 }

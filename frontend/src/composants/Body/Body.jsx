@@ -22,7 +22,7 @@ export default function Body() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            MOYEN RAPIDE <br /> & FACILE DE LOUER <br /> VOTRE <br /> VOITURE
+            MOYEN RAPIDE &  FACILE DE LOUER VOTRE VOITURE
           </motion.h1>
 
           <motion.p 
@@ -31,8 +31,8 @@ export default function Body() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Que vous prévoyiez un week-end escapade ou aventure à travers le pays, nous avons <br />
-            ce qu’il vous faut. Avec notre large sélection de véhicules et système de <br />
+            Que vous prévoyiez un week-end escapade ou aventure à travers le pays, nous avons 
+            ce qu’il vous faut. Avec notre large sélection de véhicules et système de 
             réservation pratique, la location d’une voiture n’a jamais été aussi facile.
           </motion.p>
 
@@ -59,7 +59,7 @@ export default function Body() {
             alt="image" 
             className='img'
             animate={{
-              y: [0, -20, 0], 
+              y: [0, 20, 0], 
             }}
             transition={{
               duration: 3,

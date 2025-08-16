@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Reservation;
 use App\Models\Voitures;
+use App\Notifications\ClientNotification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -81,6 +82,10 @@ public function valider($id)
     $reservation = Reservation::findOrFail($id);
     $reservation->status = 'validée';
     $reservation->save();
+
+    if($reservation->user){
+        $reservation->user->notify(new ClientNotification($reservation));
+    }
 
     return response()->json(['message' => 'Réservation validée']);
 }

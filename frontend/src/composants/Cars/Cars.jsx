@@ -3,10 +3,13 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import './Cars.css'
 import {motion} from 'framer-motion'
+import Footer from '../Footer/Footer'
+import { ClipLoader } from 'react-spinners'
 
 export default function Cars() {
 
     const [voitures, setVoitures]= useState([])
+    const [loading, setLoading]= useState(true)
     
 
     useEffect(() => {
@@ -15,15 +18,24 @@ export default function Cars() {
 
     const fetchvoitures = async () => {
     try {
+        setLoading(true)
       const res = await axios.get('http://localhost:8000/api/voitures');
       setVoitures(res.data);
     } catch (err) {
       console.error('Erreur chargement des voitures', err);
+    } finally{
+        setLoading(false)
     }
   };
+  if (loading) return (
+    <div className="loading">
+        <ClipLoader size={30} color='black' />
+    </div>
+  )
 
   return (
-   <div className="voitures-container">
+   <>
+    <div className="voitures-container">
             <h2 className="voitures-title">Notre Collection Exclusive</h2>
             <div className="voitures-grid">
                 {voitures.map((voiture) => (
@@ -34,6 +46,8 @@ export default function Cars() {
                 ))}
             </div>
     </div>
+    <Footer/>
+   </>
   )
 }
 function CarCard({ voiture }) {
@@ -49,7 +63,7 @@ function CarCard({ voiture }) {
                
                 
                 <div className="car-image-container">
-                    <img src={`http://localhost:8000/storage/images/${voiture.image}`} alt={voiture.marque} />
+                    <img src={`http://localhost:8000/storage/images/${voiture.image}`} alt={voiture.marque}/>
                 </div>
                 
                 <div className="car-info">

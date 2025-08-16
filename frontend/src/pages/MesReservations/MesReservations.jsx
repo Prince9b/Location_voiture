@@ -32,7 +32,7 @@ export default function MesReservations() {
     <div className="mes-reservations">
       <h2>Mon Historique de Réservations</h2>
       {reservations.length === 0 ? (
-        <p>Vous n'avez pas encore de réservations.</p>
+        <p></p>
       ) : (
         <table>
           <thead>

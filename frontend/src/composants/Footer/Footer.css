@@ -1,10 +1,12 @@
 .container{
-  background-color: #1f2937;
+  background-color: #194D33;
   width: 100%;
   position:absolute;
+  color:rgb(255 255 255);
+  font-style: normal;
 }
 .footer{
-  background-color: #1f2937;
+  background-color: #194D33;
   display: flex;
   justify-content: space-between;
   align-items: start;
@@ -18,7 +20,7 @@
   flex-direction: column;
   text-decoration: none;
   margin-bottom: 7px;
-  color: black;
+  color: white;
 }
 .d2{
   justify-content: center;
@@ -35,11 +37,17 @@
   flex-direction: column;
   text-decoration: none;
   margin-bottom: 7px;
-  color: black;
+  color: white;
 }
 @media screen and (max-width: 800px) { 
     .container{
-        margin-left: 50px;
-        width: 800px;
+      overflow: hidden;
+        
+    }
+    .footer{
+      flex-direction: column;
+      overflow: hidden;
+      gap: 20px;
+      background-color: #194D33;
     }
 }

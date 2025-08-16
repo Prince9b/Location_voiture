@@ -52,14 +52,15 @@
   line-height: 1.6;
 }
 
-@media screen and (max-width: 768px) {
-  .services-title {
-    font-size: 28px;
-    margin-left: 250px;
+@media (max-width: 768px) {
+  .services-section{
+    flex-direction: column;
+    overflow: hidden;
+    
   }
-
-  .service-card {
-    max-width: 100%;
-    margin-left: 250px;
+  .services-container{
+    flex-direction: column;
+    overflow: hidden;
+    margin-left: 20px;
   }
 }
