@@ -3,7 +3,9 @@
     background-color: var(--secondary-color);
     min-height: 50vh;
     max-width: 450px;
-    margin: 0 auto;
+    margin-top: 100px;
+    margin-left: 400px;
+    border-radius: 10px;
 
 }
 .contact{
@@ -11,7 +13,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin: 50px 0;
+    margin: 50px 0; 
 }
 h1{
     align-items: center;

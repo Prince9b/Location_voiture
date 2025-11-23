@@ -16,6 +16,8 @@ export default function Contact() {
           <p>Email : DiscoversCars@gmail.com</p>
           <p>Votre confort notre preoccupation</p>
         </div>
+        <br />
+        <br />  
           <Footer />
     </div>
   )
